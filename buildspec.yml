@@ -1,32 +1,22 @@
 version: 0.2
-
-phases:
-  install:
-    commands:
-      - apt-get update -y
-      - apt-get install -y openjdk-7-jdk
-      - java -version
-      - apt-get install -y maven
-  pre_build:
-    version: 0.1
-
-phases:
-  install:
-    commands:
-      - apt-get update -y
-      - apt-get install -y openjdk-7-jdk
-      - java -version
-      - apt-get install -y maven
-  build:
-    commands:
-      - echo Build started on `date`
-      - apt-get install -y maven
-      - mvn clean install              
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker image...   
-  artifacts:
-  files:
-    - target/tanvi-1.0.jar
-  discard-paths: yes
+ 
+ 
+ phases:
+   install:
+     commands:
+       - echo Entered the install phase...
+   pre_build:
+     commands:
+       - echo Entered the pre_build phase...
+   build:
+     commands:
+       - echo Entered the build phase...
+       - echo Build started on `date`
+       - mvn install
+   post_build:
+     commands:
+       - echo Entered the post_build phase...
+       - echo Build completed on `date`
+ artifacts:
+   files:
+     - target/.
