@@ -27,6 +27,6 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker image...   
   artifacts:
-    files:
-      - target/tanvi-1.0.jar
+  files:
+    - target/tanvi-1.0.jar
   discard-paths: yes
