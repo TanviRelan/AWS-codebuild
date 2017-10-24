@@ -28,5 +28,5 @@ phases:
       - echo Pushing the Docker image...   
   artifacts:
   files:
-    - messageUtil-1.0.jar
+    - target/tanvi-1.0.jar
   discard-paths: yes
